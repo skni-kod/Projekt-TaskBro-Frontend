@@ -1,0 +1,11 @@
+span{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    top: -110px;
+    left: -40px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
