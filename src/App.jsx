@@ -14,7 +14,7 @@ function App() {
     if(token){
       setIsLoggedIn(true);
     } else {
-      setIsLoggedIn(false);
+      setIsLoggedIn(true); // pamiętaj że tutaj ma być false true ustawiłem bo się login pojawaił jak settingsy robiłem
       navigate('/login');
     }
   }, [navigate]);
@@ -27,9 +27,12 @@ function App() {
 
   return(
     <>
-      {isLoggedIn ? <Header onLogout={handleLogout}/> : <Login onLogin={() => setIsLoggedIn(true)} />}
+    
+    {isLoggedIn ? <Header onLogout={handleLogout}/> : <Login onLogin={() => setIsLoggedIn(true)} />}
+
     </>
   );
 }
 
 export default App
+

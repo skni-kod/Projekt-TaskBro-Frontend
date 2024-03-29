@@ -1,8 +1,10 @@
 import styles from './Header.module.css'
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Settings from '../Settings/Settings';
+import { useNavigate } from 'react-router-dom';
 
 function Header({onLogout}){
+
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -12,6 +14,7 @@ function Header({onLogout}){
     }
 
     return(
+        <>
         <div className={styles.header}>
             <img src="images/Logo_XD.png" alt="LOGO" id='logo'/>
             <p>template</p>
@@ -23,10 +26,10 @@ function Header({onLogout}){
                     Schedule
                 </button>
             </div>
-            <div className={styles.loginregistration}>
-                <button className={styles.controlButtonLogout} onClick={handleLogout}>logout</button>
-            </div>
+            
+             <Settings onLogout={handleLogout}/>
         </div>
+    </>
     );
 }
 export default Header;
