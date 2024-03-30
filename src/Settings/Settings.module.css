@@ -9,6 +9,7 @@
     cursor: pointer;
     font-size: 3rem;
     margin-top: 35px;
+    color: black;
 }
 ul{
     list-style: none;
@@ -32,24 +33,19 @@ ul{
     right: 25px;
     height: 20px;
     width: 20px;
-    background: var(--secondary-bg);
     transform: rotate(45deg);
     background-color: white;
 }
-h3{
-    width: 100%;
-    text-align: center;
+
+.company{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 18px;
+    color: grey;
     padding: 20px 0;
     font-weight: 500;
-    color: black;
-    line-height: 1.2rem;
     margin: 0;
-}
-h3 span{
-    font-size: 14px;
-    color: grey;
-    font-weight: 400;
 }
 .dropdownMenu ul li{
    

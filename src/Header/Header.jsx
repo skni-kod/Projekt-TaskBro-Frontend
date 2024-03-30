@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Settings from '../Settings/Settings';
 import { useNavigate } from 'react-router-dom';
 
-function Header({onLogout}){
+function Header({onLogout, isDark, setIsDark}){
 
     const navigate = useNavigate();
 
@@ -14,7 +14,8 @@ function Header({onLogout}){
     }
 
     return(
-        <>
+    <>
+    <div className={styles.site} >
         <div className={styles.header}>
             <img src="images/Logo_XD.png" alt="LOGO" id='logo'/>
             <p>template</p>
@@ -27,8 +28,9 @@ function Header({onLogout}){
                 </button>
             </div>
             
-             <Settings onLogout={handleLogout}/>
+            <Settings isDark={isDark} setIsDark={setIsDark} onLogout={handleLogout}/>
         </div>
+    </div>
     </>
     );
 }

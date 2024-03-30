@@ -1,11 +1,12 @@
 import styles from './Settings.module.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MdOutlinePowerSettingsNew } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoMenu } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { Toggle } from '../Toggle/Toggle';
 
-function Settings({onLogout}) {
+function Settings({onLogout, isDark, setIsDark}) {
 
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -32,11 +33,13 @@ function Settings({onLogout}) {
       </div>
         
         <div className={`${styles.dropdownMenu} ${openMenu ? styles.active : styles.inactive}`}>
-          <h3>User<br/><span>TaskBro</span></h3>
+          <span className={styles.company}>TaskBro</span>
           <ul>
             <DropdownItem icon2={<CgProfile/>} text={"Edit profile"}/>
             <DropdownItem icon2={<MdOutlinePowerSettingsNew />} text = {"Log out"} onClick={handleLogout}/>
           </ul>
+          <Toggle isChecked={isDark}
+                  handleChange={() => setIsDark(!isDark)}/>
         </div>
       
     </div>
