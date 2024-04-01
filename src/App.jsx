@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from "use-local-storage";
 import AnimatedBackground from "./AnimatedBackground/AnimatedBackground.jsx";
-
+import EditProfile from "./EditProfile/EditProfile.jsx";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -31,12 +31,13 @@ function App() {
 
   return(
     <>
-      <div data-theme={isDark ? "dark" : "light"}>
-      {isLoggedIn ? <Header isDark={isDark} setIsDark={setIsDark} onLogout={handleLogout}/> : <Login onLogin={() => setIsLoggedIn(true)} />}
-      </div>
+      <EditProfile/>
     </>
   );
 }
 
 export default App
 
+//<div data-theme={isDark ? "dark" : "light"}>
+//      {isLoggedIn ? <Header isDark={isDark} setIsDark={setIsDark} onLogout={handleLogout}/> : <Login onLogin={() => setIsLoggedIn(true)} />}
+//      </div>
