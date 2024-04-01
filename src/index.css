@@ -19,4 +19,9 @@
     --toggle-color: #2c2e31;
     --toggle-color-2: white;
 }
-  
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height:100%;
+}

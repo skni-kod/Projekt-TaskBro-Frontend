@@ -1,3 +1,12 @@
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #323437;
+    height: 100%;
+    width:  100%;
+    z-index: -1;
+}
 .container{
     position: relative;
     width: 100%;
@@ -11,14 +20,14 @@
 }
 .circle span{
     position: relative;
-    width: 30px;
-    height: 120px;
+    width: 3vw;
+    height: 12vw;
     background: linear-gradient(to bottom, #e2b714, #7e2a33);
-    margin: 4px;
-    border-radius: 10px;
+    margin: 0.4vw;
+    border-radius: 1vw;
     animation: animate 5s linear infinite;
-    animation-duration: calc(400s/var(--i));
-    box-shadow: 0 0 10px #d1d0c5;
+    animation-duration: calc(300s/var(--i));
+    box-shadow: 0 0 1vw #d1d0c5;
 }
 .circle span:nth-child(even){
     background: linear-gradient(to bottom, #7e2a33, #e2b714);
@@ -31,7 +40,7 @@
     }
     100%
     {
-        transform: translateY(-40vh) scale(1);
+        transform: translateY(-30vh) scale(1);
     }
 }
 

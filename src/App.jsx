@@ -3,10 +3,11 @@ import Header from "./Header/Header.jsx";
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from "use-local-storage";
+import AnimatedBackground from "./AnimatedBackground/AnimatedBackground.jsx";
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const navigate = useNavigate();
 
   const[isDark, setIsDark] = useLocalStorage("isDark", false);
@@ -30,9 +31,9 @@ function App() {
 
   return(
     <>
-    <div data-theme={isDark ? "dark" : "light"}>
+      <div data-theme={isDark ? "dark" : "light"}>
       {isLoggedIn ? <Header isDark={isDark} setIsDark={setIsDark} onLogout={handleLogout}/> : <Login onLogin={() => setIsLoggedIn(true)} />}
-    </div>
+      </div>
     </>
   );
 }
