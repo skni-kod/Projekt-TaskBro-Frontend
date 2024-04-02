@@ -53,7 +53,6 @@ function Login({ onLogin }){
       <>
       <AnimatedBackground />
         <div className={styles.parent}>
-            
             <form className={styles.login} onSubmit={handleSubmit} >
                 <h1 className={styles.title}>Welcome</h1>
 

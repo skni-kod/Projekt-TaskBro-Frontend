@@ -10,20 +10,22 @@ function AnimatedBackground() {
         const generateRandomNumber = () => {
             return Math.floor((Math.random() * (40 - 10 + 1)) + 10);
         };
-        const newRandomNumbers = Array.from({ length: 74 }, () => generateRandomNumber());
+        const newRandomNumbers = Array.from({ length: 47 }, () => generateRandomNumber());
         setRandomNumbers(newRandomNumbers);
     }, []);
     
 
     
     return(
-    <div className={styles.container}>
-        <div className={styles.circle}>
-        {randomNumbers.map((randomNumber, index) => (
-                    <span key={index} style={{ '--i': randomNumber }}></span>
-                ))}
+    <div className={styles.background}>  
+        <div className={styles.container}>
+            <div className={styles.circle}>
+            {randomNumbers.map((randomNumber, index) => (
+                        <span key={index} style={{ '--i': randomNumber }}></span>
+                    ))}
+            </div>
         </div>
-    </div>
+    </div>  
     );
 }
 
