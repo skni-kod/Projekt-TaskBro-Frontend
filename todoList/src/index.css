@@ -125,3 +125,11 @@ body{
   justify-content: left;
   align-items: center;
 }
+
+div.task svg{
+
+  height:20px;
+}
+div.task{
+  display: flex;
+}

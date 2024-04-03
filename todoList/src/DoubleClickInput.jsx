@@ -4,12 +4,16 @@ const DoubleClickInput = (props) => {
   const [isEditing, setIsEditing] = useState(false);
   const [text, setText] = useState(props.text);
 
+
+  const funkcja = (param) => {
+    props.func(param.target.value)
+  }
   const handleDoubleClick = () => {
     setIsEditing(true);
   };
 
   const handleInputChange = (e) => {
-    setText(e.target.value);
+    change(e);
   };
 
   const handleInputBlur = () => {
@@ -34,7 +38,7 @@ const DoubleClickInput = (props) => {
           autoFocus
         />
       ) : (
-        <div onDoubleClick={handleDoubleClick}>{text || 'Double click to edit'}</div>
+        <div onDoubleClick={funkcja}>{text || 'Double click to edit'}</div>
       )}
     </>
   );

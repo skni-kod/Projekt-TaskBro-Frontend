@@ -3,15 +3,19 @@ import DoubleClickInput from './DoubleClickInput';
 
 function ToDoComponentPrev() {
     const [tasks, setTasks] = useState([
-        { title: "lorem", description: "lorem ipsum", startDate: new Date().toISOString().split('T')[0], finishDate: null, progress: 1, priority: 1 },
-        { title: "ipsum", description: "dolores", startDate: new Date().toISOString().split('T')[0], finishDate: null, progress: 1, priority: 1 }
+        { title: "lorem", description: "lorem ipsum", startDate: new Date().toISOString().split('T')[0], finishDate: null, progress: 1, priority: 1 , done:true},
+        { title: "ipsum", description: "dolores", startDate: new Date().toISOString().split('T')[0], finishDate: null, progress: 1, priority: 1 , done:false}
     ]);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [progress, setProgress] = useState();
     const [priority, setPriority] = useState();
+    const [done, setDone] = useState();
 
-
+    const onChangeFilter = (param) =>{
+        setTitle(param);
+    
+    }
     /*const titleSetter = (title, index) => {
         const currentTask = tasks[index];
     };
@@ -22,6 +26,7 @@ function ToDoComponentPrev() {
     const handleDescriptionChange = (event) => setDescription(event.target.value);
     const handleProgressChange = (event) => setProgress(event.target.value);
     const handlePriorityChange = (event) => setPriority(event.target.value);
+    const handleDoneChange = (event)=> setDone(event.target.value);
 
     const addTask = () => {
         const newTask = {
@@ -36,7 +41,7 @@ function ToDoComponentPrev() {
         setTitle("");
         setDescription("");
         setProgress("");
-        setPriority();
+        setPriority("");
     };
 
     const deleteTask = (index) => {
@@ -70,15 +75,16 @@ function ToDoComponentPrev() {
                 <ol>
                     {tasks.map((task, index) =>
                         <li key={index} className='task-list'>
-                            <div className='title'> {task.title}</div>
-                            <div className='description'>{task.description}</div>
+                            <div className='title'> <DoubleClickInput text = {task.title} func = {onChangeFilter}></DoubleClickInput></div>
+                            <div className='description'><DoubleClickInput></DoubleClickInput></div>
                             <div className='startDate'>{task.startDate}</div>
                             <div className='dueDate'>{task.finishDate}</div>
                             <div className='progress'>{task.progress}</div>
                             <div className='priority'>{task.priority}</div>
                             <button className='task-button' id='delete-button' onClick={() => deleteTask(index)}>Delete</button>
-                            <button className='task-button' id='move-up-button' onClick={() => moveTaskUp(index)}>Move Up</button>
-                            <button className='task-button' id='move-down-button' onClick={() => moveTaskDown(index)}>Move Down</button>
+                            <button className='task-button' id='move-up-button' onClick={() => moveTaskUp(index)}>↑</button>
+                            <button className='task-button' id='move-down-button' onClick={() => moveTaskDown(index)}>↓</button>
+                            <input onChange={handleDoneChange} value = {done} type="checkbox" />
                         </li>
                     )}
                 </ol>
