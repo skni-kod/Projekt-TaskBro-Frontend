@@ -130,6 +130,21 @@ div.task svg{
 
   height:20px;
 }
-div.task{
+div.task {
   display: flex;
+  justify-content: space-between; /* Adjust this property as needed */
+  padding: 2px;
+  margin-left: 5px;
+ }
+ 
+div.task-desc{
+  background-color: var(--secondary_button);
+  display: flex;
+  flex-grow: 1;}
+  div.task-title {
+    background-color: var(--secondary_button);
+    flex-grow: 1; /* This makes the element fill all available free space */
+   }
+div.task-desc, div.task-title {
+ border: 1px solid black; /* Adjust the border width, style, and color as needed */
 }
