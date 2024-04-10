@@ -1,40 +1,39 @@
 .formContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    padding: 20px;
-  
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    height: 400px;
+ 
+
     border-radius: 30px;
-    background-color: var(--header-color);
+    background-color: var(--background-color);
     box-shadow: 0 0 10px black;
+    color: var(--primary-text-color);
 }
 
 form{
+   
+    margin: auto;
+    height:400px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-self: center;
-    
-    width: 100%;
-
-   
 }
 
 input{
-    width: 200px;
+    width: 300px;
     height: 30px;
     font-size: 14px;
     margin: 10px 20px 10px 40px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
     color: black;
-    
+    padding: auto;
+    font-weight: bold;
 }
 
 input::placeholder{
@@ -43,4 +42,10 @@ input::placeholder{
 
 button{
     margin: 10px 0;
+    
+}
+
+.label{
+    font-size: 1.5rem;
+    font-weight: bold;
 }

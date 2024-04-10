@@ -9,12 +9,12 @@
     --toggle-color-2: #323437;
 }
 [data-theme="dark"]{
-    --background-color: purple;
-    --header-color: black;
+    --background-color: red;
+    --header-color: white;
     --primary-text-color: #d1d0c5;
     --red-color: #7e2a33 ;
-    --main-button: green;
-    --second-button:  #646669;
+    --main-button: red;
+    --second-button:  red;
     --toggle-color: #2c2e31;
     --toggle-color-2: white;
 }
