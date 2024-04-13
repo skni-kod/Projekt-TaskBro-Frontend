@@ -19,9 +19,6 @@ function EditProfile(){
         fetchData();
     }, []);
     
-    const handleEmailChange = (event) => {
-        setUserData({...userData, email: event.target.value});
-    }
 
     const handlePasswordChange = (event) => {
         setUserData({...userData, password: event.target.value});
@@ -38,8 +35,6 @@ function EditProfile(){
             <form>
                 <h1>Edit profile </h1>
                 <div>
-                    <label className={styles.label}>Email:</label>
-                    <input  type="text" name="email"   value={userData.email || ''} onChange={handleEmailChange}></input>
                     <label className={styles.label}>Password:</label>
                     <input  type="password" name="password"  value={userData.password || ''} onChange={handlePasswordChange}></input>
                 </div>
