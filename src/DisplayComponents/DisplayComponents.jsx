@@ -18,7 +18,7 @@ function DisplayComponents() {
       if(token){
         setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(true); // pamiętać że tutaj ma być false true ustawiłem bo się login pojawaił jak settingsy robiłem
+        setIsLoggedIn(false); // pamiętać że tutaj ma być false true ustawiłem bo się login pojawaił jak settingsy robiłem
         navigate('/login');
       }
     }, [navigate]);

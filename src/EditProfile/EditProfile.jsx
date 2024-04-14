@@ -35,7 +35,7 @@ function EditProfile(){
             <form>
                 <h1>Edit profile </h1>
                 <div>
-                    <label className={styles.label}>Password:</label>
+                    <label className={styles.label}>Edit password:</label>
                     <input  type="password" name="password"  value={userData.password || ''} onChange={handlePasswordChange}></input>
                 </div>
                 <div>

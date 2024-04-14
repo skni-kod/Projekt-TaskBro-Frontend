@@ -22,7 +22,7 @@ function Settings({onLogout, isDark, setIsDark}) {
 
   function DropdownItem(props){
     return(
-      <li className={styles.dropdownItem}>
+      <li className={styles.dropdownItem} onClick={props.onClick}>
         <a className={styles.icon2}>{props.icon2}</a>
         <a className={styles.text}>{props.text}</a>
       </li>
