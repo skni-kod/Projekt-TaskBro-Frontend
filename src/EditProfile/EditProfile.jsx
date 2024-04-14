@@ -1,7 +1,7 @@
 import styles from './EditProfile.module.css'
 import { useState, useEffect } from 'react'
 
-function EditProfile(){
+function EditProfile({ onClose }){
     const[userData, setUserData] = useState({});
     useEffect(() => {
         const fetchData = async () =>{
@@ -29,6 +29,21 @@ function EditProfile(){
         
     }
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const isOutside = !event.target.closest(`.${styles.formContainer}`);
+            const isEditProfileItem = event.target.textContent === "Edit profile";
+            if (isOutside && !isEditProfileItem) {
+                onClose(); 
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [onClose]);
     
     return(
         <div className={styles.formContainer}>

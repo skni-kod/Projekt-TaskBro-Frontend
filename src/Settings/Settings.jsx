@@ -30,10 +30,10 @@ function Settings({onLogout, isDark, setIsDark}) {
   }
 
   const handleEditProfileClick = () => {
-    console.log(showEditProfile);
     setShowEditProfile(true);
     
   };
+  
 
   return(
     <>
@@ -53,7 +53,7 @@ function Settings({onLogout, isDark, setIsDark}) {
         </div>
         
     </div>
-    {showEditProfile && <EditProfile/>}
+      { showEditProfile && <EditProfile onClose={() => setShowEditProfile(false)}/>}
     </>
   );
 }
