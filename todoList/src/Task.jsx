@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import Checkbox from "./Checkbox.jsx";
+import "./Task.css"
 function Task({name,description,done,date,priority,onToggle,onDelete,onRename,onRenameDescription,onRenameDate,onRenamePriority}){
     const [titleEditMode, setTitleEditMode] = useState(false);
     const [descriptionEditMode, setDescriptionEditMode] = useState(false);
@@ -29,7 +30,7 @@ function Task({name,description,done,date,priority,onToggle,onDelete,onRename,on
             )}
 
             {!descriptionEditMode && (
-                <div className="task-desc" onDoubleClick={() => setDescriptionEditMode(prev => !prev)}>
+                <div className="task-title" onDoubleClick={() => setDescriptionEditMode(prev => !prev)}>
                     <span>
                         {description}
                     </span>
@@ -37,7 +38,7 @@ function Task({name,description,done,date,priority,onToggle,onDelete,onRename,on
 
             )}
             {descriptionEditMode && (
-                <div className="task-desc">
+                <div className="task-title">
                     <form action="" onSubmit={ev=>{ev.preventDefault();setDescriptionEditMode(false)}}>
                         <input type="text" value={description} 
                             onChange={ev => onRenameDescription(ev.target.value)}/>
@@ -46,7 +47,7 @@ function Task({name,description,done,date,priority,onToggle,onDelete,onRename,on
                 
             )}
             {!dateEditMode && (
-                <div className="task-desc" onDoubleClick={() => setDateEditMode(prev => !prev)}>
+                <div className="task-title" onDoubleClick={() => setDateEditMode(prev => !prev)}>
                     <span>
                         {date}
                     </span>
@@ -54,7 +55,7 @@ function Task({name,description,done,date,priority,onToggle,onDelete,onRename,on
 
             )}
             {dateEditMode && (
-                <div className="task-desc">
+                <div className="task-title">
                     <form action="" onSubmit={ev=>{ev.preventDefault();setDateEditMode(false)}}>
                         <input type="date" value={date} 
                             onChange={ev => {onRenameDate(ev.target.value)}}/>
@@ -63,7 +64,7 @@ function Task({name,description,done,date,priority,onToggle,onDelete,onRename,on
                 
             )}
             {!priorityEditMode && (
-                <div className="task-desc" onDoubleClick={() => setPriorityEditMode(prev => !prev)}>
+                <div className="task-title" onDoubleClick={() => setPriorityEditMode(prev => !prev)}>
                     <span>
                         {priority}
                     </span>
@@ -71,7 +72,7 @@ function Task({name,description,done,date,priority,onToggle,onDelete,onRename,on
 
             )}
             {priorityEditMode && (
-                <div className="task-desc">
+                <div className="task-title">
                     <form action="" onSubmit={ev=>{ev.preventDefault();setPriorityEditMode(false)}}>
                         <input type="number" value={priority} 
                             onChange={ev => {onRenamePriority(ev.target.value);}}
