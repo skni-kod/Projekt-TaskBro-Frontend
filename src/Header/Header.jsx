@@ -17,8 +17,10 @@ function Header({onLogout, isDark, setIsDark}){
     <>
     <div className={styles.site} >
         <div className={styles.header}>
-            <img src="images/Logo_XD.png" alt="LOGO" id='logo'/>
-            <p>template</p>
+            <div>
+                <img className={styles.logo} src="src/Header/images/Logo_XD.png" alt="LOGO" id='logo'/> 
+            </div>
+            
             <div className={styles.controlButtonsContainer}>
                 <button className={styles.controlButton}>
                     Tasks
@@ -26,9 +28,10 @@ function Header({onLogout, isDark, setIsDark}){
                 <button className={styles.controlButton}>
                     Schedule
                 </button>
+                <Settings isDark={isDark} setIsDark={setIsDark} onLogout={handleLogout}/>
             </div>
             
-            <Settings isDark={isDark} setIsDark={setIsDark} onLogout={handleLogout}/>
+            
         </div>
     </div>
     </>

@@ -1,6 +1,8 @@
 import styles from './Toggle.module.css'
 
 export const Toggle = ({handleChange, isChecked}) => {
+
+
     return(
         <div className={styles.toggleContainer}>
             <input 
@@ -10,7 +12,7 @@ export const Toggle = ({handleChange, isChecked}) => {
             onChange={handleChange}
             checked={isChecked}>
             </input>
-            <label htmlFor="check">Dark Mode</label>
+            <label className={styles.text} htmlFor="check">{isChecked ? "Dark Mode" : "Light Mode" }</label>
         </div>
     );
 }

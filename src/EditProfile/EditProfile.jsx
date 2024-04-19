@@ -1,8 +1,11 @@
 import styles from './EditProfile.module.css'
 import { useState, useEffect } from 'react'
+import { FaLock, FaLockOpen } from "react-icons/fa";
 
 function EditProfile({ onClose }){
     const[userData, setUserData] = useState({});
+    const [showPassword, setShowPassword] = useState(false);
+
     useEffect(() => {
         const fetchData = async () =>{
             try{
@@ -31,9 +34,13 @@ function EditProfile({ onClose }){
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            const isOutside = !event.target.closest(`.${styles.formContainer}`);
+            const isInsideForm = event.target.closest(`.${styles.formContainer}`);
             const isEditProfileItem = event.target.textContent === "Edit profile";
-            if (isOutside && !isEditProfileItem) {
+            const isLockIconClicked = event.target.classList.contains(styles.icon_lock);
+            const isLockIconOpen = event.target.classList.contains('FaLockOpen');
+            const isLockIconClosed = event.target.classList.contains('FaLock');
+        
+            if (!isInsideForm && !isEditProfileItem && !isLockIconClicked && !isLockIconOpen && !isLockIconClosed) {
                 onClose(); 
             }
         };
@@ -45,16 +52,22 @@ function EditProfile({ onClose }){
         };
     }, [onClose]);
     
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+      }
+
     return(
         <div className={styles.formContainer}>
-            <form>
-                <h1>Edit profile </h1>
+            <form className={styles.formularz}>
+                <h1 className={styles.title}>Edit profile </h1>
                 <div>
                     <label className={styles.label}>Edit password:</label>
-                    <input  type="password" name="password"  value={userData.password || ''} onChange={handlePasswordChange}></input>
+                    <input className={styles.haslo} type={showPassword ? "text" : "password"} name="password"  value={userData.password || ''} onChange={handlePasswordChange}></input>
+                    <p onClick={(event) => {event.stopPropagation();
+                     togglePasswordVisibility()}} className={styles.icon_lock}>{showPassword ? <FaLockOpen/> : <FaLock/>}</p>
                 </div>
                 <div>
-                    <button type="button" onClick={handleUpdate}>Update</button>
+                    <button className={styles.btnN} type="button" onClick={handleUpdate}>Update</button>
                 </div>
             </form>
         </div>

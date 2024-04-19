@@ -18,7 +18,7 @@ function DisplayComponents() {
       if(token){
         setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(false); // pamiętać że tutaj ma być false true ustawiłem bo się login pojawaił jak settingsy robiłem
+        setIsLoggedIn(false); 
         navigate('/login');
       }
     }, [navigate]);
@@ -26,7 +26,7 @@ function DisplayComponents() {
     const handleLogout = () => {
       localStorage.removeItem('token');
       setIsLoggedIn(false);
-      navigate('login');
+      navigate('/login');
     };
   
     return(

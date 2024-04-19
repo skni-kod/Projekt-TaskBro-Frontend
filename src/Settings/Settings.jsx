@@ -22,7 +22,7 @@ function Settings({onLogout, isDark, setIsDark}) {
 
   function DropdownItem(props){
     return(
-      <li className={styles.dropdownItem} onClick={props.onClick}>
+      <li className={styles.dropdownItem} onClick={props.onClick} onClose={props.onClose}>
         <a className={styles.icon2}>{props.icon2}</a>
         <a className={styles.text}>{props.text}</a>
       </li>
@@ -34,12 +34,28 @@ function Settings({onLogout, isDark, setIsDark}) {
     
   };
   
+  
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+        const isOutside = !event.target.closest(`.${styles.dropdownMenu}`);
+        const paski = event.target.closest(`.${styles.paski}`)
+        if (isOutside && !paski) {
+            setOpenMenu(false);
+        }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+        document.removeEventListener('click', handleClickOutside);
+    };
+}, []);
 
   return(
     <>
     <div className={styles.menuContainer}>
       <div className={styles.menu}>
-        <span className={styles.paski} onClick={ () => setOpenMenu(!openMenu)}><IoMenu /></span>
+        <span className={styles.paski} onClick={ () => setOpenMenu(!openMenu)} onClose={()=>setOpenMenu(false)}><IoMenu /></span>
       </div>
         
         <div className={`${styles.dropdownMenu} ${openMenu ? styles.active : styles.inactive}`}>

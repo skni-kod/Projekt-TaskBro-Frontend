@@ -5,18 +5,20 @@
 .toggle + label{
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 25px;
     cursor: pointer;
-    color: black;
+    color: var(--settings-text-color);
+    margin-top: 120px;
 }
 .toggle + label::before {
     content: "";
     height: 1em;
-    width: 2.1em;
+    width: 2em;
     border-radius: 1em;
-    background-color: var(--toggle-color);
-    margin-right: 0.5em;
+    background-color: #e2b714;
+    margin-right: 0.8em;
     transition: background-color 250ms ease-in-out;
+
 }
 
 .toggle + label::after{
@@ -26,7 +28,7 @@
     border-radius: 1em;
     background-color: var(--toggle-color-2);
     position: absolute;
-    left: 0.8em;
+    left: 1em;
     transition: background-color 250ms ease-in-out;
 
 }

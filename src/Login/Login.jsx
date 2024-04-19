@@ -28,7 +28,7 @@ function Login({ onLogin }){
           });
 
           if(!response.ok){
-            throw new Error('BŁĄD LOGOWANIA')
+            throw new Error('NIEPOPRAWNY EMAIL LUB HASŁO')
           }
           
           const data = await response.json();
@@ -62,7 +62,8 @@ function Login({ onLogin }){
                     <input type="text" 
                     placeholder="email" 
                     required value={email} 
-                    onChange={(e) => setEmail(e.target.value)} ></input>
+                    onChange={(e) => setEmail(e.target.value)} 
+                    maxLength={50}></input>
                     <FaUser className={styles.icon}/>
                 </div>
 
@@ -71,7 +72,8 @@ function Login({ onLogin }){
                     placeholder="password" 
                     required
                     value={password} 
-                    onChange={(e) => setPassword(e.target.value)} ></input>
+                    onChange={(e) => setPassword(e.target.value)} 
+                    maxLength={50}></input>
 
                     <p onClick={togglePasswordVisibility} className={styles.icon_lock}>
                       {showPassword ? <FaLockOpen/> : <FaLock/>}
@@ -80,7 +82,7 @@ function Login({ onLogin }){
                 </div>
                 <div className={styles.error}>{error}</div>
                 <div className={styles.forgot}>
-                    <a href="tutaj nie wiem jakaś navigacja do zmioany hasłą czy coś?">Forgot password?</a>
+                    <a href="/forgotPassword">Forgot password?</a>
                 </div>
 
                 <button type="submit">Login</button>
