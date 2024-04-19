@@ -1,9 +1,5 @@
 
 
-body{
-  background-color: var(--main_background);
-  font-family: 'Roboto Mono';
-}
 :root{
   --main_orange:#e2b714;
   --main_background:#323437;
@@ -12,9 +8,3 @@ body{
   --main_button:#2c2e31;
   --main_red:#7e2a33;
 }
-
-
-
-
-
-
