@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from "use-local-storage";
 import TaskList from "../TaskList.jsx";
-import EditProfile from "../EditProfile/EditProfile.jsx";
+
 
 
 function DisplayComponents() {
@@ -20,7 +20,7 @@ function DisplayComponents() {
       if(token){
         setIsLoggedIn(true);
       } else {
-        setIsLoggedIn(true); 
+        setIsLoggedIn(false); 
         navigate('/login');
       }
     }, [navigate]);
@@ -36,7 +36,7 @@ function DisplayComponents() {
         
         <div data-theme={isDark ? "dark" : "light"}>
         {isLoggedIn ? <Header isDark={isDark} setIsDark={setIsDark} onLogout={handleLogout} isTasksSelected={isTasksSelected} setIsTasksSelected={setIsTasksSelected}/> : <Login onLogin={() => setIsLoggedIn(true)} />}
-        {isTasksSelected ? <TaskList></TaskList>:<></>}
+        {isTasksSelected ? <TaskList></TaskList> : <></>}
         </div>
       </>
     );

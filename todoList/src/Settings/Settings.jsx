@@ -60,7 +60,7 @@ function Settings({onLogout, isDark, setIsDark}) {
         
         <div className={`${styles.dropdownMenu} ${openMenu ? styles.active : styles.inactive}`}>
           <span className={styles.company}>TaskBro</span>
-          <ul>
+          <ul className={styles.lista}>
             <DropdownItem icon2={<CgProfile/>} text={"Edit profile"} onClick={handleEditProfileClick}/>
             <DropdownItem icon2={<MdOutlinePowerSettingsNew />} text = {"Log out"} onClick={handleLogout}/>
           </ul>

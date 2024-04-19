@@ -41,6 +41,8 @@
     font-weight: bold;
     margin-bottom: 100px;
     margin-top:20px;
+    border-radius: 40px;
+
 }
 
 .haslo::placeholder{
@@ -69,6 +71,15 @@
 .btnN{
     background-color: var(--main-button);
     color: var(--primary-text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 20px;
+    width: 150px;
+    height: 45px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .btnN:hover{

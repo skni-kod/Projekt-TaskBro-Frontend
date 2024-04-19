@@ -11,7 +11,7 @@
     margin-top: 35px;
     color: var(--settings-back-color);
 }
-ul{
+.lista{
     list-style: none;
     padding: 0;
 }
@@ -48,7 +48,7 @@ ul{
     font-weight: 500;
     margin: 0;
 }
-.dropdownMenu ul li{
+.dropdownMenu .lista li{
     display: flex;
     align-items: center;
     padding: 10px 0;
@@ -59,18 +59,18 @@ ul{
     color: var(--settings-text-color);
     
 }
-.dropdownMenu ul{
+.dropdownMenu .lista{
     margin-left: 10px;
     list-style: none;
     padding: 0;
 }
 
-.dropdownMenu ul li:hover a{
+.dropdownMenu .lista .lista:hover a{
  color: #e2b714;
  cursor: pointer;
 }
 
-.dropdownMenu ul li:hover img{
+.dropdownMenu .lista .lista:hover img{
     opacity: 1;
     cursor: pointer;
 }

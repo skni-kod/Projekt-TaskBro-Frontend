@@ -4,7 +4,6 @@ function App(){
   return(
     <>
     <DisplayComponents></DisplayComponents>
-    <TaskList></TaskList>
     </>
    
   );

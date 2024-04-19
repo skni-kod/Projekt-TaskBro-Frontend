@@ -59,7 +59,8 @@ function Login({ onLogin }){
                 <h1 className={styles.title}>Welcome</h1>
 
                 <div className={styles.inputbox}>
-                    <input type="text" 
+                    <input className={styles.inputy}
+                    type="text" 
                     placeholder="email" 
                     required value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
@@ -68,7 +69,8 @@ function Login({ onLogin }){
                 </div>
 
                 <div className={styles.inputbox}>
-                    <input type={showPassword ? "text" : "password"} 
+                    <input className={styles.inputy}
+                    type={showPassword ? "text" : "password"} 
                     placeholder="password" 
                     required
                     value={password} 
@@ -85,9 +87,9 @@ function Login({ onLogin }){
                     <a href="/forgotPassword">Forgot password?</a>
                 </div>
 
-                <button type="submit">Login</button>
+                <button className={styles.btNsubm} type="submit">Login</button>
                 
-                <p>Sign up in <a href="/register">here</a></p>
+                <p className={styles.signUpIn}>Sign up in <a href="/register">here</a></p>
 
             </form>
 

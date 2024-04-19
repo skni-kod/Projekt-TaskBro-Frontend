@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Settings from '../Settings/Settings';
 import { useNavigate } from 'react-router-dom';
 
-function Header({onLogout, isDark, setIsDark,setIsTasksSelected, IsTasksSelected}){
+function Header({onLogout, isDark, setIsDark,setIsTasksSelected, isTasksSelected}){
 
     const navigate = useNavigate();
 
@@ -15,14 +15,14 @@ function Header({onLogout, isDark, setIsDark,setIsTasksSelected, IsTasksSelected
 
     return(
     <>
-    <div className={styles.site} >
+    
         <div className={styles.header}>
             <div>
                 <img className={styles.logo} src="src/Header/images/Logo_XD.png" alt="LOGO" id='logo'/> 
             </div>
             
             <div className={styles.controlButtonsContainer}>
-                <button className={styles.controlButton} onClick={()=>setIsTasksSelected(IsTasksSelected) }>
+                <button className={styles.controlButton} onClick={()=>setIsTasksSelected(!isTasksSelected) }>
                     Tasks
                 </button>
                 <button className={styles.controlButton}>
@@ -33,7 +33,7 @@ function Header({onLogout, isDark, setIsDark,setIsTasksSelected, IsTasksSelected
             
             
         </div>
-    </div>
+
     </>
     );
 }
