@@ -1,7 +1,12 @@
 
+.task-title{
+
+    display: flex;
+    flex-grow: 1;
+    width: 15%;
+    border: 1px solid grey;}
 div.task svg{
 
-    height:20px;
   }
 div.task {
     display: flex;
