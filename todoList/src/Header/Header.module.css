@@ -1,0 +1,134 @@
+.site{
+  background-color: var(--background-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+
+  background-color: var(--header-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+}
+.logoContainer {
+  margin-left: 20px; 
+}
+.logo{
+  width:100px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.logo:hover{
+  width: 22%;
+  
+}
+.controlButtonsContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+}
+.controlButton{
+  padding: 1vh 1vw;
+  margin: 0 1vw;
+  background-color: var(--main-button);
+  color: var(--primary-text-color);
+
+  font-size: 1.5rem;
+  min-width: 150px;
+  max-width: 300px;
+}
+.controlButton:hover{
+  background-color: var(--toggle-color);
+  color: var(--button-text);
+
+}
+
+
+.taskContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+}
+.add-button{
+  width: 50px;
+  align-self: center;
+}
+.task-button{
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--second-button) 0.5 ease;
+  background-color: var(--second-button);
+}
+.task-list{
+  font-size: 1;
+  font-weight: bold;
+  background-color: var(--header-color);
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.title{
+  width: 300px;
+  border: 2px solid black;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.description{
+  width: 800px;
+  border: 2px solid black;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.progress{
+  width: 25px;
+  border: 2px solid black;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.priority{
+  width: 25px;
+  border: 2px solid black;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.dueDate{
+  width: 100px;
+  border: 2px solid black;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.startDate{
+  width: 100px;
+  border: 2px solid black;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.loginregistration{
+  position: relative;
+}
