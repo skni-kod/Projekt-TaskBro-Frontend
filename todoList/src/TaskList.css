@@ -1,16 +1,14 @@
-
-div.task svg{
-
+.asset-description svg{
     height:20px;
-  }
-div.task {
+
+}
+div.asset-description{
     display: flex;
     justify-content: space-between; 
     padding: 2px;
     margin-left: 5px;
 }
-
-div.task-desc {
+span.asset-description-tile{
     display: flex;
     flex-grow: 1;
     width: 15%;
@@ -18,8 +16,12 @@ div.task-desc {
     background-color: var(--secondary_button);
 
 }
-.task-desc:hover{
-
-    border: 1px solid var(--main_orange);
-    color: var(--main_orange);
-    cursor:pointer;}
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.TaskList{
+    width: 80%;
+}

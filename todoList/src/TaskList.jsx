@@ -1,9 +1,9 @@
 import Header from "./Header.jsx";
-    import ToDoComponent from "./ToDoComponent.jsx";
-    import ToDoComponentPrev from "./ToDoComponentPrev.jsx";
-    import TaskAddForm from "./TaskAddForm.jsx"
-    import Task from "./Task.jsx";
-    import { useEffect, useState } from "react";
+import TaskAddForm from "./TaskAddForm.jsx"
+import Task from "./Task.jsx";
+import Checkbox from "./Checkbox.jsx";
+import "./TaskList.css"
+import { useEffect, useState } from "react";
 export default function TaskList(){
 
     
@@ -11,7 +11,7 @@ export default function TaskList(){
       const [tasks,setTasks] = useState([])
     
     
-    
+      /*
       useEffect(()=>{
         if(tasks.length ===0) return;
         localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -24,6 +24,20 @@ export default function TaskList(){
         setTasks(tasks);
     
       },[]);
+      */
+      useEffect(()=>{ 
+        fetch(`http://localhost:5000/GetTasks`)
+        .then(res=> {
+          return res.json();
+
+        })
+        
+        .then(data => {
+          setTasks(data);
+          console.log(data);
+        });
+        
+      },[])
       function addTask(name){
         setTasks(prev => {
             const currentDate = new Date();
@@ -76,8 +90,18 @@ export default function TaskList(){
       
       return(
         <main>
-          <Header></Header>
+          <div className="TaskList">
           <TaskAddForm onAdd={name=> addTask(name)}></TaskAddForm>
+          
+          <div className="asset-description">
+          <Checkbox></Checkbox>
+            <span className="asset-description-tile">Task</span>
+            <span className="asset-description-tile">Description</span>
+            <span className="asset-description-tile">Date</span>
+            <span className="asset-description-tile">Priority</span>
+
+            <button>usuń</button>
+          </div>
           {tasks.map((task, index) => (
             <Task {...task} 
             onRename={newName => renameTask(index,newName)}
@@ -90,6 +114,8 @@ export default function TaskList(){
             
             </Task>
           ))}
+          </div>
+          
         </main>
        
         

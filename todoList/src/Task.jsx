@@ -1,17 +1,18 @@
 
 import { useState } from "react";
+import "./Task.css"
 import Checkbox from "./Checkbox.jsx";
-function Task({name,description,done,date,priority,onToggle,onDelete,onRename,onRenameDescription,onRenameDate,onRenamePriority}){
+function Task({name,description,progress,date,priority,onToggle,onDelete,onRename,onRenameDescription,onRenameDate,onRenamePriority}){
     const [titleEditMode, setTitleEditMode] = useState(false);
     const [descriptionEditMode, setDescriptionEditMode] = useState(false);
     const [dateEditMode, setDateEditMode] = useState(false);
     const [priorityEditMode, setPriorityEditMode] = useState(false);
     return(
         <div className="task">
-            <Checkbox checked={done} onClick={()=>onToggle(!done)}></Checkbox>
+            <Checkbox checked={progress} onClick={()=>onToggle(!progress)}></Checkbox>
 
             {!titleEditMode && (
-                <div className="task-title" onDoubleClick={() => setTitleEditMode(prev => !prev)}>
+                <div className="task-desc" onDoubleClick={() => setTitleEditMode(prev => !prev)}>
                     <span>
                         {name}
                     </span>
@@ -19,7 +20,7 @@ function Task({name,description,done,date,priority,onToggle,onDelete,onRename,on
 
             )}
             {titleEditMode && (
-                <div className="task-title">
+                <div className="task-desc">
                     <form action="" onSubmit={ev=>{ev.preventDefault();setTitleEditMode(false)}}>
                     <input type="text" value={name} 
                     onChange={ev => onRename(ev.target.value)}/>
