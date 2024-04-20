@@ -114,7 +114,6 @@ export default function TaskList(){
             </Task>
           ))}
           </div>
-          
         </main>
        
         

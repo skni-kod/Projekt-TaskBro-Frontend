@@ -65,12 +65,12 @@
     padding: 0;
 }
 
-.dropdownMenu .lista .lista:hover a{
+.dropdownMenu .lista li:hover a{
  color: #e2b714;
  cursor: pointer;
 }
 
-.dropdownMenu .lista .lista:hover img{
+.dropdownMenu .lista li:hover img{
     opacity: 1;
     cursor: pointer;
 }
