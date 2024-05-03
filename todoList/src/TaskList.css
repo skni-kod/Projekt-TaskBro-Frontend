@@ -8,10 +8,26 @@ div.asset-description{
     padding: 2px;
     margin-left: 5px;
 }
-span.asset-description-tile{
+span.asset-description-title{
     display: flex;
     flex-grow: 1;
-    width: 15%;
+    width: 300px;
+    border: 1px solid black;
+    background-color: var(--secondary_button);
+
+}
+span.asset-description-date{
+    display: flex;
+    flex-grow: 1;
+    width: 100px;
+    border: 1px solid black;
+    background-color: var(--secondary_button);
+
+}
+span.asset-description-priority{
+    display: flex;
+    flex-grow: 1;
+    width: 50px;
     border: 1px solid black;
     background-color: var(--secondary_button);
 

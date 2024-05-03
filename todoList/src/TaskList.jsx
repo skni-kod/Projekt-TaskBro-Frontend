@@ -8,7 +8,7 @@ export default function TaskList(){
     
     
       const [tasks,setTasks] = useState([])
-    
+      let [temp,setTemp] = useState(0);
     
       /*
       useEffect(()=>{
@@ -25,18 +25,21 @@ export default function TaskList(){
       },[]);
       */
       useEffect(()=>{ 
-        fetch(`http://localhost:5000/GetTasks`)
+        const token = localStorage.getItem('token').replace(/"/g, '');
+        fetch(`http://localhost:5000/GetTasks`, {
+          headers: {Authorization: `Bearer ${token}`}
+        })
         .then(res=> {
           return res.json();
 
         })
         
         .then(data => {
-          setTasks(data);
-          console.log(data);
+          setTasks(data.data);
+          console.log(data.data);
         });
         
-      },[])
+      },[temp])
       function addTask(name){
         setTasks(prev => {
             const currentDate = new Date();
@@ -89,15 +92,17 @@ export default function TaskList(){
       
       return(
         <main>
+          <button onClick={()=>setTemp(temp++)}>KLIKNIJ MNIE </button>
+          {console.log(temp)}
           <div className="TaskList">
           <TaskAddForm onAdd={name=> addTask(name)}></TaskAddForm>
           
           <div className="asset-description">
           <Checkbox></Checkbox>
-            <span className="asset-description-tile">Task</span>
-            <span className="asset-description-tile">Description</span>
-            <span className="asset-description-tile">Date</span>
-            <span className="asset-description-tile">Priority</span>
+            <span className="asset-description-title">Task</span>
+            {/*<span className="asset-description-tile">Description</span>!-->*/}
+            <span className="asset-description-date">Date</span>
+            <span className="asset-description-priority">Priority</span>
 
             <button>usuń</button>
           </div>
